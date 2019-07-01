@@ -1,0 +1,23 @@
+.xd-content .xd-body .xd-body-inner {
+	margin-top: 20%;
+}
+.xd-content .xd-body{
+}
+.xd-content .xd-body p {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	text-emphasis-color: black;
+	/* text-shadow: 0 0 3px rgba(0, 0, 0, 0.75); */
+}
+.xd-content .xd-button.xd-ok {
+	background: red;
+	padding: 1.5%;
+}
+.xd-content {
+	background-color: black;
+	border-style: solid;
+	border-width: 5px;
+	border-color: red;
+
+}

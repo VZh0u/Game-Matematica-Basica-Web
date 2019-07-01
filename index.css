@@ -1,11 +1,13 @@
-button {
-    /* background:url('http://css3button.net/176376'); */
+.button {
+    background-image:url('http://css3button.net/176376');
 }
-
+/* body{
+  background-color: red;
+}
 .fundojogo{
   background-color: #e68a00;
 
-}
+} */
 .cor{
   background-color: blue;
 }
