@@ -1,0 +1,68 @@
+
+CREATE TABLE escola (
+                idescola INT AUTO_INCREMENT NOT NULL,
+                escola VARCHAR(50) NOT NULL,
+                PRIMARY KEY (idescola)
+);
+
+
+CREATE TABLE professor (
+                idprofessor INT AUTO_INCREMENT NOT NULL,
+                professor VARCHAR(20) NOT NULL,
+                nickProf VARCHAR(20) NOT NULL,
+                senha VARCHAR(20) NOT NULL,
+                PRIMARY KEY (idprofessor)
+);
+
+
+CREATE TABLE turma (
+                idturma INT AUTO_INCREMENT NOT NULL,
+                turma VARCHAR(10) NOT NULL,
+                periodo VARCHAR(15) NOT NULL,
+                idescola INT NOT NULL,
+                idprofessor INT NOT NULL,
+                PRIMARY KEY (idturma)
+);
+
+
+CREATE TABLE aluno (
+                idaluno INT AUTO_INCREMENT NOT NULL,
+                aluno VARCHAR(20) NOT NULL,
+                nick VARCHAR(20) NOT NULL,
+                senha VARCHAR(20) NOT NULL,
+                idturma INT NOT NULL,
+                PRIMARY KEY (idaluno)
+);
+
+
+CREATE TABLE jogo (
+                idjogo INT AUTO_INCREMENT NOT NULL,
+                pontuacao INT NOT NULL,
+                idaluno INT NOT NULL,
+                PRIMARY KEY (idjogo)
+);
+
+
+ALTER TABLE turma ADD CONSTRAINT escola_turma_fk
+FOREIGN KEY (idescola)
+REFERENCES escola (idescola)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE turma ADD CONSTRAINT professor_turma_fk
+FOREIGN KEY (idprofessor)
+REFERENCES professor (idprofessor)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE aluno ADD CONSTRAINT turma_aluno_fk
+FOREIGN KEY (idturma)
+REFERENCES turma (idturma)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE jogo ADD CONSTRAINT aluno_jogo_fk
+FOREIGN KEY (idaluno)
+REFERENCES aluno (idaluno)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
